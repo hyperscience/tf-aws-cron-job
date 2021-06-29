@@ -112,7 +112,8 @@ resource "aws_cloudwatch_event_rule" "task_failure" {
           {"anything-but": 0}
         ]
       },
-      "clusterArn": ["${local.ecs_cluster_arn}"]
+      "clusterArn": ["${local.ecs_cluster_arn}"],
+      "taskDefinitionArn": ["${aws_ecs_task_definition.this.arn}"]
     }
   }
   EOF
