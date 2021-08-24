@@ -2,7 +2,7 @@
 
 Terraform Module that spins up a Docker-based scheduled job on AWS ECR.
 
-Source code referenced by the blog post: https://hyperscience.com/tech-blog/running-cron-jobs-in-aws/
+Source code referenced by the blog post: https://hyperscience.com/tech-blog/running-scheduled-jobs-in-aws/
 
 ## Providers
 
