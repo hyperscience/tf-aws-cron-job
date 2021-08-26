@@ -39,7 +39,7 @@ variable "cloudwatch_schedule_expression" {
 }
 
 variable "extra_container_defs" {
-  type        = map(any)
+  type        = any
   default     = {}
   description = "Additional configuration that you want to add to your task definition (see https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html for all options)"
 }
