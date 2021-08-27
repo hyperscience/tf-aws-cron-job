@@ -184,7 +184,7 @@ data "aws_iam_policy_document" "task_execution_cloudwatch_access" {
 }
 
 data "aws_iam_role" "task_execution_role" {
-  count = var.ecs_task_execution_role_name == "" ? 1 : 0
+  count = var.ecs_task_execution_role_name != "" ? 1 : 0
 
   name = var.ecs_task_execution_role_name
 }
