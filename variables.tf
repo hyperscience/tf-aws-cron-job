@@ -48,3 +48,8 @@ variable "task_role_arn" {
   default     = null
   description = "IAM role ARN for your task if it needs to access any AWS resources.  IMPORTANT: This must have an AssumeRolePolicy that includes the 'ecs-tasks.amazonaws.com' provider!!"
 }
+
+variable "ecs_task_execution_role_name" {
+  default = ""
+  description = "If the default AWS ECSTaskExecutionRole is not sufficient for your needs, you can provide your own ECS Task Execution Role here.  The module will attach a CloudWatch policy for logging purposes."
+}
