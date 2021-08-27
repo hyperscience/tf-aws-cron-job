@@ -226,7 +226,7 @@ data "aws_iam_policy_document" "cloudwatch" {
     actions = ["iam:PassRole"]
     resources = concat([
       aws_iam_role.task_execution_role.arn
-    ], [var.task_role_arn] ? var.task_role_arn != null : [])
+    ], var.task_role_arn != null ? [var.task_role_arn] : [])
   }
 }
 
