@@ -201,7 +201,7 @@ resource "aws_iam_role" "task_execution_role" {
   assume_role_policy = data.aws_iam_policy_document.task_execution_assume_role.json
 }
 
-resource "aws_iam_policy" "task_execution_role" {
+resource "aws_iam_policy" "task_execution_logging_policy" {
   name   = "${var.task_name}-logging"
   policy = data.aws_iam_policy_document.task_execution_cloudwatch_access.json
 }
@@ -214,8 +214,8 @@ resource "aws_iam_role_policy_attachment" "ecs_task_execution" {
 }
 
 resource "aws_iam_role_policy_attachment" "ecs_task_execution_cloudwatch_access" {
-  role       = local.ecs_task_execution_role_name
-  policy_arn = local.ecs_task_execution_role_arn
+  role       = local.ecs_task_execution_role_arn
+  policy_arn = aws_iam_policy.task_execution_logging_policy
 }
 
 // Cloudwatch execution role
