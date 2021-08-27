@@ -190,8 +190,8 @@ data "aws_iam_role" "task_execution_role" {
 }
 
 locals {
-  ecs_task_execution_role_arn = var.ecs_task_execution_role_name = "" ? data.aws_iam_role.task_execution_role[0].arn : aws_iam_role.task_execution_role[0].arn
-  ecs_task_execution_role_name = var.ecs_task_execution_role_name = "" ? data.aws_iam_role.task_execution_role[0].name : aws_iam_role.task_execution_role[0].name
+  ecs_task_execution_role_arn  = var.ecs_task_execution_role_name == "" ? data.aws_iam_role.task_execution_role[0].arn : aws_iam_role.task_execution_role[0].arn
+  ecs_task_execution_role_name = var.ecs_task_execution_role_name == "" ? data.aws_iam_role.task_execution_role[0].name : aws_iam_role.task_execution_role[0].name
 }
 
 resource "aws_iam_role" "task_execution_role" {

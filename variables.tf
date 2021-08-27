@@ -50,6 +50,6 @@ variable "task_role_arn" {
 }
 
 variable "ecs_task_execution_role_name" {
-  default = ""
+  default     = ""
   description = "If the default AWS ECSTaskExecutionRole is not sufficient for your needs, you can provide your own ECS Task Execution Role here.  The module will attach a CloudWatch policy for logging purposes."
 }
