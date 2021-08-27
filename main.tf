@@ -214,7 +214,7 @@ resource "aws_iam_role_policy_attachment" "ecs_task_execution" {
 }
 
 resource "aws_iam_role_policy_attachment" "ecs_task_execution_cloudwatch_access" {
-  role       = local.ecs_task_execution_role_arn
+  role       = local.ecs_task_execution_role_name
   policy_arn = aws_iam_policy.task_execution_logging_policy.arn
 }
 
