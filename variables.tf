@@ -46,5 +46,5 @@ variable "extra_container_defs" {
 
 variable "task_role_arn" {
   default     = null
-  description = "IAM role ARN for your task if it needs to access any AWS resources"
+  description = "IAM role ARN for your task if it needs to access any AWS resources.  IMPORTANT: This must have an AssumeRolePolicy that includes the 'ecs-tasks.amazonaws.com' provider!!"
 }
