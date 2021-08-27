@@ -195,7 +195,7 @@ locals {
 }
 
 resource "aws_iam_role" "task_execution_role" {
-  count = var.ecs_task_execution_role_arn == "" ? 1 : 0
+  count = var.ecs_task_execution_role_name == "" ? 1 : 0
 
   name               = "${var.task_name}-execution"
   assume_role_policy = data.aws_iam_policy_document.task_execution_assume_role.json
@@ -207,7 +207,7 @@ resource "aws_iam_policy" "task_execution_role" {
 }
 
 resource "aws_iam_role_policy_attachment" "ecs_task_execution" {
-  count = var.ecs_task_execution_role_arn == "" ? 1 : 0
+  count = var.ecs_task_execution_role_name == "" ? 1 : 0
 
   role       = local.ecs_task_execution_role_name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
