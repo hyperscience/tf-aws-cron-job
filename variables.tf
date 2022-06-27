@@ -33,6 +33,11 @@ variable "subnet_ids" {
   description = "Subnets where the job will be run"
 }
 
+variable "security_group_ids" {
+  type        = list(string)
+  description = "Security groups to associate with the job"
+}
+
 variable "cloudwatch_schedule_expression" {
   type        = string
   description = "AWS cron schedule expression"
